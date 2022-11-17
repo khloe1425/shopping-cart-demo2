@@ -1,3 +1,21 @@
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+  //Prevent right click
+}, false);
+document.onkeydown = function (event) {
+  event = (event || window.event);
+  if (event.keyCode == 123) {
+    // Prevent F12 
+    return false;
+  } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+    // Prevent Ctrl+Shift+I 
+    return false;
+  }
+}
+
+
+
+
 const getEle = (id) => document.getElementById(id);
 
 import { Service } from '../services/phoneService.js';
@@ -51,9 +69,8 @@ const renderList = (phoneList) => {
           </div>
           <span class = 'text-success'><b>In Stock</b></span>
         </div>
-        <button type="button" class="btn btn-block w-50" onclick ="btnAddToCart('${
-          ele.id
-        }')">Add to cart</button>
+        <button type="button" class="btn btn-block w-50" onclick ="btnAddToCart('${ele.id
+      }')">Add to cart</button>
       </div>
     </div>
   </div>`;
@@ -72,17 +89,13 @@ const renderCart = (cart) => {
     </div>
     <div class="product__details">
       <div style="margin-bottom: 8px;"><b>${ele.product.name}</b></div>
-      <div style="font-size: 90%;">Screen: <span class="tertiary">${
-        ele.product.screen
+      <div style="font-size: 90%;">Screen: <span class="tertiary">${ele.product.screen
       }</span></div>
-      <div style="font-size: 90%;">Back Camera: <span class="tertiary">${
-        ele.product.backCamera
+      <div style="font-size: 90%;">Back Camera: <span class="tertiary">${ele.product.backCamera
       }</span></div>
-      <div style="font-size: 90%;">Front Camera: <span class="tertiary">${
-        ele.product.frontCamera
+      <div style="font-size: 90%;">Front Camera: <span class="tertiary">${ele.product.frontCamera
       }</span></div>
-      <div style="margin-top: 8px;"><a href="#!" onclick ="btnRemove('${
-        ele.product.id
+      <div style="margin-top: 8px;"><a href="#!" onclick ="btnRemove('${ele.product.id
       }')">Remove</a></div>
     </div>
   </div>
