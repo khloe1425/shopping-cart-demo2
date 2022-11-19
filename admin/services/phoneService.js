@@ -2,7 +2,7 @@ export class Services {
   getPhones = async () => {
     try {
       const res = await axios({
-        url: 'https://62dabe8ee56f6d82a768e4fc.mockapi.io/Phones',
+        url: 'https://6204afb3c6d8b20017dc3656.mockapi.io/Products',
         method: 'GET',
       });
       return res.data;
@@ -14,7 +14,7 @@ export class Services {
   addPhone = async (phone) => {
     try {
       await axios({
-        url: 'https://62dabe8ee56f6d82a768e4fc.mockapi.io/Phones',
+        url: 'https://6204afb3c6d8b20017dc3656.mockapi.io/Products',
         method: 'POST',
         data: phone,
       });
@@ -26,7 +26,7 @@ export class Services {
   deletePhone = async (id) => {
     try {
       await axios({
-        url: `https://62dabe8ee56f6d82a768e4fc.mockapi.io/Phones/${id}`,
+        url: `https://6204afb3c6d8b20017dc3656.mockapi.io/Products/${id}`,
         method: 'DELETE',
       });
     } catch (err) {
@@ -37,7 +37,7 @@ export class Services {
   getPhoneById = async (id) => {
     try {
       const res = await axios({
-        url: `https://62dabe8ee56f6d82a768e4fc.mockapi.io/Phones/${id}`,
+        url: `https://6204afb3c6d8b20017dc3656.mockapi.io/Products/${id}`,
         method: 'GET',
       });
       return res.data;

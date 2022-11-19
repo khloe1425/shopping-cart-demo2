@@ -154,7 +154,7 @@ window.onload = async () => {
 };
 
 //lọc phone theo hãng
-getEle('selectList').onclick = async () => {
+getEle('selectList').onchange = async () => {
   const data = await service.getPhones();
   const selectValue = getEle('selectList').value;
   let filterData =
